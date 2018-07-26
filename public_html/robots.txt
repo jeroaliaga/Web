@@ -1,0 +1,4 @@
+User-agent: *
+Allow: *
+
+Sitemap: http://desaludhablamos.com/static/js/summernote/library/sitemap.xml

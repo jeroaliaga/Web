@@ -1,0 +1,59 @@
+Header
+
+Desde el ancho de pantalla de 850px hasta los 1400px no entran todos los elementos, por ende el buscador se encuentra escondido. El botón que hará que se visualice es el link “.menu_head > li:first-of-type > a”. Pasos a seguir para la animación de esto:
+.menu_head -> opacity: 0; width: 0; overflow: hidden;
+Pasados 0.3 seg .menu_head -> display: none;
+.searchContainer -> display: block;
+Pasados 0.1 seg .searchContainer -> opacity: 1; width: auto; overflow: visible; 
+
+En el caso de que el ancho sea menor que 850px o mayor que 1400px remover attr style de .menu_head y .searchContainer.
+
+Para cerrar el buscador el botón encargado de tal acción será “.closeSearch”. En este caso también habrá animación:
+
+.searchContainer -> opacity: 0; width: 0; overflow: hidden; 
+Pasados 0.3 seg .searchContainer -> display: none;
+.menu_head -> display: block;
+Pasados 0.1 seg .menu_head -> opacity: 1; width: auto; overflow: visible;
+
+El evento de .closeSearch se debe ejecutar al darle click a dicho botón o al pasar 4 segundos seguidos en los cuales el mouse no esté sobre el header (Y que ninguno de los componentes esté onfocus).
+
+———————————————————————————————————————————————————————
+
+Galería
+
+"contGallery > contImgs" contiene  tres divs, los cuales todos tienen un texto y un background diferentes.
+Al hacer click en los li internos de ulGallery el contenido del primer div dentro de contImgs debe cambiar esfumándose.
+
+Volar de todos los li > a la clase “selected” y atribuírsela al li > a correspondiente;
+
+———————————————————————————————————————————————————————
+
+Quienes Somos
+
+Hay dos contenedores.  “SI SOS PROFESIONAL” (“.faqs > .links > ul > li:first-of-type > a”) y “SI BUSCAS UN PROFESIONAL  (“.faqs > .links > ul > li:nth-of-type(3) > a”).
+
+Al hacer click en “SI BUSCAS UN PROFESIONAL":
+Remover clase “select” de ".faqs > .links > ul > li:first-of-type > a”.
+
+.profesional -> opacity:0;
+Pasados 0.3 seg .profesional -> display:none; / .paciente -> display:block;
+Pasados 0.05 seg .paciente -> opacity:1;
+this.className = “select”;
+
+Al hacer click en “Leer más” estando visible .paciente :
+".paciente > h3", ".paciente > p” -> display: block;
+Pasados ".paciente > h3", ".paciente > p" -> height: auto; overflow: visible; opacity: 1;
+
+Al hacer click en “SI SOS PROFESIONAL”:
+Remover clase “select” de ".faqs > .links > ul > li:nth-of-type(3) > a”.
+
+.paciente -> opacity:0;
+Pasados 0.3 seg .paciente -> display:none; / .profesional -> display:block;
+Pasados 0.05 seg .profesional -> opacity:1;
+this.className = “select”;
+
+Al hacer click en “Leer más” estando visible .profesional :
+“.profesional > h3", “.profesional > p” -> display: block;
+Pasados “.profesional > h3", “.profesional > p" -> height: auto; overflow: visible; opacity: 1;
+
+———————————————————————————————————————————————————————
