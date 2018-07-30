@@ -52,7 +52,7 @@
 		<?php 
 		echo $title; echo $frstP;
 		if($totalRows_R_publicaciones_list==0){?>
-			<div class="col-xs-12 col-md-12">
+			<div class="no_content">
 				<p>Por el momento no hay información cargada en esta sección.</p>
 			</div>
 		<?php } else { ?>

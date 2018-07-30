@@ -1,4 +1,4 @@
-<div class="bloque_contacto">
+<div class="contacto">
 		<div class="container">
 			<?php if($estado_proceso){?>
 			<div class="row" style="margin-top:20px;">
@@ -8,8 +8,8 @@
 				</div>
 			</div>
 			<?php } ?>
-			<div class="col-xs-12 col-md-6">
-				<h2>Formulario de contacto</h2>
+			<div class="cont_form">
+				<h2>Contacto</h2>
 				<p>Utilice el siguiente formulario para contactarnos.</p>
 				<form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
 					<input type="text" name="nombre" required placeholder="Nombre" <?php if($_SESSION['nombre']){ echo 'value="'.$_SESSION['nombre'].'"'; } ?> />
@@ -21,13 +21,9 @@
 					<input type="hidden" name="action" value="DoEnviarMensaje" />
 				</form>
 			</div>
-			<div class="col-xs-12 col-md-6">
-				<h2>Otras formas de contactarnos</h2>
-				<p>Además le ofrecemos...</p>
-				<ul>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i>info@desaludhablamos.com</li>
-					<!--<li><i class="fa fa-mobile" aria-hidden="true"></i>(11) 4444 4444</li>-->
-				</ul>
+			<div class="other">
+				<p>Otras formas de contactarnos</p>
+				<p><i class="fa fa-envelope-o" aria-hidden="true"></i>info@desaludhablamos.com</p>
 			</div>
 		</div>
 	</div>

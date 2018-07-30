@@ -244,7 +244,7 @@ ul.menu_head li.social ul li a:hover{
     vertical-align: top;
 }
 .contGallery > .contImgs > div:first-of-type{
-    background: url(../img/gallery2.jpg);
+    background: url(../img/gallery1.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -709,12 +709,19 @@ footer > span{
 
 /* Notas */
 
+.no_content{
+    width: 80%;
+    margin: auto;
+}
 .section_notas{
     background: url(../img/gallery1.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: white;
+}
+.section_notas > .container:first-of-type{
+    min-height: 350px;
 }
 .section_notas > .container > h2, .note_container > .container_info > h2{
     padding-top: 40px;
@@ -962,7 +969,7 @@ footer > span{
 
 /* Actividades */
 
-.section_notas.actividades > .container{
+.section_notas.actividades > .container, .section_notas.foros > .container{
     background: url(../img/bgGrey.png) repeat;
 }
 .col_filtros > h3{
@@ -988,6 +995,23 @@ footer > span{
 .section_notas.actividades .info_publicacion > h3{
     font-size: 1.2em;
     color: #707070;   
+}
+
+/* Contacto */
+
+.contacto{
+    width: 100%;
+    background: url(../img/gallery1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.contacto h2, .contacto p, .contacto ul, .contacto li{
+    color: white;
+}
+.contacto > .container{
+    width: 100%;
+    background: url(../img/bgGreen.png) repeat;
 }
 
 /*contenido
