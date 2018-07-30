@@ -10,7 +10,6 @@
 			<?php } ?>
 			<div class="cont_form">
 				<h2>Contacto</h2>
-				<p>Utilice el siguiente formulario para contactarnos.</p>
 				<form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
 					<input type="text" name="nombre" required placeholder="Nombre" <?php if($_SESSION['nombre']){ echo 'value="'.$_SESSION['nombre'].'"'; } ?> />
 					<input type="email" name="email" required placeholder="E-mail" <?php if($_SESSION['email']){ echo 'value="'.$_SESSION['email'].'"'; } ?> />
