@@ -18,11 +18,8 @@
 	border:none !important;
 }
 
-body {
-  padding-top: 1px;
-}
-body > div:first-of-type{
-    margin-top: 99px;
+body{
+  padding-top: 100px;
 }
 
 /*Menu*/
@@ -132,6 +129,9 @@ ul.menu_head li.social ul li a{
 ul.menu_head li.social ul li a:hover{
 	background-color: #007F71;
 }
+input, textarea{
+    outline: none;
+}
 .searchContainer{
     margin-left: 10px;
     color: grey;
@@ -147,6 +147,8 @@ ul.menu_head li.social ul li a:hover{
     -moz-box-shadow: none;
     box-shadow: none;
     height: 30px;
+    font-size: .8em;
+    outline: none;
 }
 .searchContainer > div > form > select{
     width: 150px;
@@ -154,6 +156,7 @@ ul.menu_head li.social ul li a:hover{
 .searchContainer .select2-container--default .select2-selection--single{
     border: 1px solid grey;
     height: 30px;
+    font-size: .8em;
 }
 .searchContainer:nth-of-type(2){
     display: block;
@@ -196,9 +199,6 @@ ul.menu_head li.social ul li a:hover{
     border-radius: 5px;
     font-size: 1.3em;
     vertical-align: bottom;
-}
-.select2-container--default .select2-selection--single .select2-selection__rendered{
-    display: none;
 }
 .searchContainer:nth-of-type(2) .select2-container--default .select2-selection--single .select2-selection__rendered{
     margin-top: 10px;
@@ -599,7 +599,7 @@ footer > span{
     background-position: center;
     background-attachment: fixed;
 }
-.quienessomos > .container{
+.quienessomos > .container, .section_notas.herramientas > .container{
     background: url(../img/bgGreen.png) repeat;
     padding: 0;
     margin: auto;
@@ -722,11 +722,13 @@ footer > span{
 }
 .section_notas > .container:first-of-type{
     min-height: 350px;
+    padding-bottom: 60px;
 }
-.section_notas > .container > h2, .note_container > .container_info > h2{
+.section_notas > .container > h2, .note_container > .container_info > h2, .resultados > .container > h2{
     padding-top: 40px;
     padding-bottom: 15px;
     margin-bottom: 30px;
+    margin-top: 0;
     border-bottom: 1px solid white;
 }
 .section_notas > .container > p{
@@ -813,7 +815,7 @@ footer > span{
     position: relative;
     padding-bottom: 60px;
 }
-.note_container > .container_info > h2{
+.note_container > .container_info > h2, .resultados > .container > h2{
     color: #009D84;
     border-bottom: 1px solid black;
 }
@@ -983,7 +985,11 @@ footer > span{
     margin-top: 20px;
     margin-bottom: 30px;
 }
-.col_filtros > .bloque_filtros > a{
+.col_filtros > .bloque_filtros.herramientas{
+    width: 240px;
+    margin: 20px auto 30px 10%;
+}
+.col_filtros > .bloque_filtros > a, .col_filtros > .bloque_filtros > .grupo{
     color: white;
     background: #AB6BB4;
     padding: 7px 15px;
@@ -991,8 +997,32 @@ footer > span{
     border-radius: 5px;
     margin-right: 5px;
     box-shadow: 0px 3px 10px #5F5F5F;
+    vertical-align: top;
 }
-.section_notas.actividades .info_publicacion > h3{
+.col_filtros > .bloque_filtros.herramientas > a, .col_filtros > .bloque_filtros.herramientas > .grupo{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.col_filtros > .bloque_filtros.actividades > .grupo{
+    height: 30px;
+    width: 208px;
+    overflow: hidden;
+    padding: 5px 15px;
+}
+.col_filtros > .bloque_filtros > .grupo > a:first-of-type{
+    height: 30px;
+    width: 208px;
+    overflow: hidden;
+    padding: 5px 15px;
+}
+.col_filtros > .bloque_filtros > .grupo > span, .col_filtros > .bloque_filtros > .grupo > a{
+    display: block;
+    width: 100%;
+}
+.col_filtros > .bloque_filtros > .grupo > a{
+    font-size: .5em;
+}
+.section_notas.actividades .info_publicacion > h3, .section_notas.foros .info_publicacion > h3{
     font-size: 1.2em;
     color: #707070;   
 }
@@ -1012,24 +1042,197 @@ footer > span{
 .contacto > .container{
     width: 100%;
     background: url(../img/bgGreen.png) repeat;
+    padding: 0;
+    padding-bottom: 60px;
 }
 .contacto > .container > .cont_form{
     width: 80%;
-    max-width: 700px;
+    max-width: 500px;
+    margin: auto;
 }
-.contact_form > form{
+.contacto > .container > .other{
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+.cont_form > h2{
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 60px;
+}
+.cont_form > form{
     width: 100%;
     padding: 0;
+    padding-bottom: 60px;
+    position: relative;
 }
-.contact_form > form > input{
-    border: 1px solid grey;
+.cont_form > form > input, .cont_form > form > textarea{
+    border: none;
     border-radius: 5px;
     background: white;
     padding: 8px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    height: 30px;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.cont_form > form > textarea{
+    resize: none;
+    height: 90px;
+}
+.cont_form > form > input[type=submit], #login_form > .btn.btn-default, .login > .container > .div_registro > a{
+    width: 100px;
+    height: 35px;
+    font-size: 1em;
+    background: #AB6BB4;
+    color: white;
+    box-shadow: 0 0 5px #555555;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: none;
+}
+
+/* Registro */
+
+.login{
+    width: 100%;
+    background: url(../img/gallery1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.login > .container{
+    width: 100%;
+    background: url(../img/bgGreen.png) repeat;
+    padding: 0;
+    padding-bottom: 60px;
+}
+.login > .container > .cont_login, .login > .container > .div_registro{
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 60px;
+}
+.login > .container > .div_registro{
+    margin-top: 40px;
+}
+.login > .container > .cont_login > h2, .login > .container > .cont_login > .acceso_pacientes > h2, .login > .container > .div_registro > h2, .modal-dialog > .modal-content > .modal-header > h2{
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.login > .container > .cont_login > h2{
+    margin-top: 0;
+}
+#login_form{
+    position: relative;
+    padding-bottom: 60px;
+}
+#login_form > input{
+    height: 35px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    border: none;
+}
+#login_form > p{
+    color: white;
+    display: inline-block;
+}
+#login_form > input[type=checkbox]{
+    height: auto;
+    margin-right: 5px;
+    vertical-align: top;
+}
+.forgot_pass{
+    display: block;
+    color: white;
+}
+.forgot_pass:hover{
+    color: white;
+}
+.acceso_pacientes{
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.acceso_pacientes > a{
+    background: #3B5998;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #555555;
+}
+.login > .container > .div_registro{
+    position: relative;
+}
+.login > .container > .div_registro > h2{
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.login > .container > .div_registro > p{
+    color: white;
+}
+.login > .container > .div_registro > a{
+    width: 250px;
+    margin-top: 30px;
+    padding: 7px 20px;
+    border-radius: 4px;
+    text-align: center;
+    left: 0;
+    position: static;
+    display: block;
+}
+
+/* Registro */
+
+#ModalRegistro.modal{
+    background: none;
+    margin-top: 100px;
+    background: url(../img/gallery1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.modal-dialog{
+    margin-top: 0;
+    width: 100%;
+    margin-left: 0;
+    background: url(../img/bgGreen.png) repeat;
+}
+.modal-dialog > .modal-content{
+    width: 80%;
+    margin: auto;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.modal-dialog > .modal-content > .modal-header{
+    padding: 0;
+}
+.modal-dialog > .modal-content > .modal-header > h2{
+    margin-top: 60px;
+}
+.modal-dialog > .modal-content > form > .modal-body{
+    padding: 0;
+}
+.modal-backdrop{
+    background: none;
+}
+
+/* Resultados de búsqueda */
+
+.resultados{
+    padding-bottom: 60px;
 }
 
 /*Bloque registro/login 
@@ -2549,7 +2752,7 @@ a.btn_comprar:hover{
         display: inline-block;
     }
     .searchContainer{
-        width: 530px;
+        width: 500px;
     }
     .menu_head{
         display: inline-block;
@@ -2819,6 +3022,30 @@ a.btn_comprar:hover{
     .img_autor, .datos{
         display: inline-block;
     }
+    .login > .container > .cont_login, .login > .container > .div_registro{
+        width: 50%;
+        padding-right: 60px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .login > .container > .cont_login{
+        margin-left: 10%;
+    }
+    .login > .container > .div_registro{
+        width: 30%;
+        height: 323px;
+        padding-left: 60px;
+        margin-top: 60px;
+        border-left: 1px solid white;
+    }
+    .login > .container > .div_registro > h2{
+        margin-top: 0;
+    }
+    .acceso_pacientes{
+        margin-top: 0;
+        padding-bottom: 0;
+        border: none;
+    }
 }
 @media screen and (min-width: 1200px){
     .tres_botones_inicio > .container > ul{
@@ -2870,10 +3097,26 @@ a.btn_comprar:hover{
     .comentario{
         width: 50%;
     }
+    .contacto > .container > .cont_form, .contacto > .container > .other{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .contacto > .container > .cont_form{
+        width: 500px;
+        margin-right: 30px;
+        margin-left: 30%;
+    }
+    .contacto > .container > .other{
+        margin-top: 120px;
+        width: 200px;
+    }
 }
 @media screen and (min-width: 1400px){
     .searchContainer{
         display: inline-block;
         vertical-align: top;
+    }
+    .login > .container > .cont_login{
+        margin-left: 20%;
     }
 }

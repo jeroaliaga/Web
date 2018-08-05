@@ -10,10 +10,12 @@
 	$frstP = '';
 	switch ($estoy) {
 		case 'herramientas':
-			if(isset($_SESSION['tipo_usr']) && ($_SESSION['tipo_usr']==1 || $_SESSION['tipo_usr']==2)){ 
-				$title = '<h2>Hacé click en el filtro que buscás</h2>';
+			if(isset($_SESSION['tipo_usr']) && ($_SESSION['tipo_usr']==1 || $_SESSION['tipo_usr']==2)){
+				$title = '<h2>herramientas</h2>';
+				$frstP = '<p>Encontrá todo lo que buscas</p>';
 			} else {
-				$title = '<h2>Hacé click en el filtro que buscás</h2>';
+				$title = '<h2>herramientas</h2>';
+				$frstP = '<p>Encontrá todo lo que buscas</p>';
 			}
 			break;
 		case 'actividades':
@@ -72,7 +74,7 @@
 			?>
 			<div class="col_filtros">
 				<?php if($estoy=='herramientas'){?>
-				<div class="bloque_filtros">
+				<div class="bloque_filtros <?php echo $estoy; ?>">
 					<div class="grupo">
 						<span>Material Bibliográfico</span>
 						<a href="?filtro=10" title="Libros">Libros</a>
@@ -112,15 +114,15 @@
 					</li><?php }else{ ?><li>
 						<a href="<?php echo '../'.$row_R_publicaciones_list['path'].'/?id='.$row_R_publicaciones_list['id']; ?>" title="<?php echo $row_R_publicaciones_list['page_title']; ?>">
 							<?php if($tipo_publicacion_id==6){ ?>
-							<div class="img_publicacion_foro" style="background: url('<?php if($row_R_publicaciones_list['img']){ echo $row_R_publicaciones_list['img']; } else { echo $default_img_bg_nota; } ?>');"></div>
+							<div class="img_publicacion" style="background: url('<?php if($row_R_publicaciones_list['img']){ echo $row_R_publicaciones_list['img']; } else { echo $default_img_bg_nota; } ?>'); background-size: cover;"></div>
 							<?php } else { ?>
 							<div class="img_publicacion" style="background: url('<?php if($row_R_publicaciones_list['publicacion_img']){ echo '../'.'static/img_publicaciones/'.$row_R_publicaciones_list['publicacion_img']; } else { echo $default_img_bg_nota; } ?>');background-size: cover;
     							background-position: center;"></div>
 							<?php } ?>
-							<?php if($tipo_publicacion_id==6){ ?>
-							<span><?php echo $row_R_publicaciones_list['nombre'].' '.$row_R_publicaciones_list['apellido']; ?></span>
-							<?php } else { ?>
 							<div class="info_publicacion">
+							<?php if($tipo_publicacion_id==6){ ?>
+								<span><?php echo $row_R_publicaciones_list['nombre'].' '.$row_R_publicaciones_list['apellido']; ?></span>
+							<?php } else { ?>
 								<span><?php echo $row_R_publicaciones_list['nombre'].' '.$row_R_publicaciones_list['apellido']; ?></span>
 								<?php } ?>
 								<h3><?php echo $row_R_publicaciones_list['page_title']; ?></h3>

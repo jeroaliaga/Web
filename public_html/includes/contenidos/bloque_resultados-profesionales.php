@@ -1,4 +1,4 @@
-<div class="bloque_registro">
+<div class="resultados">
 	<div class="container">
 		<?php if($estado_proceso){?>
 		<div class="row" style="margin-top:20px;">
@@ -10,8 +10,8 @@
 		<?php } ?>
 
 		<?php if(count($_SESSION['resultados_busco_profesional'])>0){?>
-		<h1>Estos son los resultados que encontramos...</h1>
-		<div class="col-xs-12 col-md-10">
+		<h2>Estos son los resultados que encontramos...</h2>
+		<div class="cont_resultados">
 			<ul class="bloque_resultados_profesionales">
 				<?php
 					$resultados_a_mostrar = 0;
@@ -251,7 +251,7 @@
 					<!--<div class="col-xs-12 col-md-1 col_comentarios">
 						<h3>Calificaciones<br/><i class="fa fa-star" aria-hidden="true"></i></h3>
 					</div>-->
-					<div class="col-xs-12 col-md-2 col_imagen_perfil">
+					<div class="imagen_perfil">
 						<a href="<?php echo $ruta_raiz.'profesionales/?id='.$resultado_profesionales['id']; ?>" title="Ver perfil completo">
 							<div class="img_perfil" style="background: url('<?php if($resultado_profesionales['img']){ echo $resultado_profesionales['img']; } else { echo $default_user_image; } ?>');"></div>
 						</a>

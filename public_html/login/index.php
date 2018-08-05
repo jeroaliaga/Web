@@ -2,7 +2,7 @@
 	session_start();
 	///Configuración empieza aqui
 	$ruta_raiz = "../";
-	$estoy = "registro-login";
+	$estoy = "login";
 	$titulo_seccion = "Registro / Log In";
 	include($ruta_raiz."includes/sitematrix/gral_data.php");
 		//incluyo todos los modulos que necesito en el orden que se deben cargar

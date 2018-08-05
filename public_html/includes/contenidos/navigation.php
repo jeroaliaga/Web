@@ -53,10 +53,10 @@
           <ul class="nav navbar-nav menu_head">
           	<li><a href="javascript:void(0)"><i class="fa fa-search"></i></a></li>
 			<li <?php if($estoy == "quienes-somos"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>quienes-somos" >Quienes Somos</a></li>
-			<li <?php if($estoy == "biblioteca"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>notas" >Notas</a></li>
-			<li <?php if($estoy == "actividades-foros"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>actividades" >Actividades</a></li>
+			<li <?php if($estoy == "notas"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>notas" >Notas</a></li>
+			<li <?php if($estoy == "actividades"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>actividades" >Actividades</a></li>
             <li <?php if($estoy == "herramientas"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>herramientas" >Herramientas</a></li>
-			<li <?php if($estoy == "actividades-foros"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>foros" >Foros</a></li>
+			<li <?php if($estoy == "foros"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>foros" >Foros</a></li>
 			<li <?php if($estoy == "contacto"){ echo ' class="active"'; } ?>><a href="<?php echo $ruta_raiz; ?>contacto" >Contacto</a></li>
 			<?php if($_SESSION['id_usuario'] || $_SESSION['facebook_access_token']){ ?>
 				<?php if($_SESSION['id_usuario'] && !$_SESSION['facebook_access_token']) { ?>
@@ -65,7 +65,7 @@
 				<li class="btn_registro<?php if($estoy == "invitado"){ echo ' active'; } ?>"><a href="<?php echo $ruta_raiz; ?>invitado">Mis Preferencias</a></li>
 				<?php } ?>
 			<?php } else { ?>
-				<li class="btn_registro"><a href="<?php echo $ruta_raiz; ?>login">Registrarse/Ingresar</a></li>
+				<li class="btn_registro<?php if($estoy == "login"){ echo ' active'; } ?>"><a href="<?php echo $ruta_raiz; ?>login">Registrarse/Ingresar</a></li>
 			<?php } ?>
 			<li class="social">
 				<ul>

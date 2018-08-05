@@ -22,7 +22,7 @@
 			</div>
 			<div class="other">
 				<p>Otras formas de contactarnos</p>
-				<p><i class="fa fa-envelope-o" aria-hidden="true"></i>info@desaludhablamos.com</p>
+				<p><b>info@desaludhablamos.com</b></p>
 			</div>
 		</div>
 	</div>

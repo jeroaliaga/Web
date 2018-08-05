@@ -49,7 +49,7 @@
 	include($ruta_raiz."includes/sitematrix/head.php");
 ?> 
 <body>
-	<?php include($ruta_raiz."includes/sitematrix/preloader.php"); ?>
+	<?php //include($ruta_raiz."includes/sitematrix/preloader.php"); ?>
 	<?php
 	foreach ($includes_array as $include_array){
 		include($ruta_raiz."includes/contenidos/".$include_array);

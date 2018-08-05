@@ -1,4 +1,4 @@
-<div class="bloque_registro">
+<div class="login">
 	<div class="container">
 		<?php if($estado_proceso){?>
 		<div class="row" style="margin-top:20px;">
@@ -8,32 +8,24 @@
 			</div>
 		</div>
 		<?php } ?>
-		<div class="col-xs-12 col-md-6">
-			<h1>Ingreso Profesionales / Instituciones</h1>
+		<div class="cont_login">
+			<h2>Ingreso Profesionales / Instituciones</h2>
 			<form name="login_form" id="login_form" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
-				<div class="form-group">
-					<label for="email">Email:</label>
-					<input name="email" required type="email" class="form-control" id="email">
-				</div>
-				<div class="form-group">
-					<label for="pwd">Contraseña:</label>
-					<input name="password" required type="password" class="form-control" id="pwd">
-				</div>
-				<div class="form-group">
-					<label for="pwd">Recordarme en este dispositivo</label>
-					<input type="checkbox" class="remember_me" name="remember_me" value="yes">
-				</div>
+				<input name="email" required type="email" class="form-control" id="email" placeholder="E-mail">
+				<input name="password" required type="password" class="form-control" id="pwd" placeholder="Contraseña">
+				<input type="checkbox" class="remember_me" name="remember_me" value="yes">
+				<p>Recordarme en este dispositivo</p>
+				<a href="#" class="forgot_pass" data-toggle="modal" data-target="#ModalRecuperoPassword" title="Olvidé mi contraseña">Olvidé mi contraseña</a>
 				<button type="submit" class="btn btn-default">Ingresar</button>
 				<input type="hidden" name="action" value="login" />
 			</form>
-			<a href="#" class="olvide_password" data-toggle="modal" data-target="#ModalRecuperoPassword" title="Olvidé mi contraseña">Olvidé mi contraseña</a>
-			<div class="bloque_acceso_visitantes">
-				<h1>Ingreso Pacientes</h1>
-				<a href="<?php echo $loginUrl; ?>" title="Ingreso con cuenta de Faceboo">Ingresar con mis datos de Facebook</a>
+			<div class="acceso_pacientes">
+				<h2>Ingreso Pacientes</h2>
+				<a href="<?php echo $loginUrl; ?>" title="Ingreso con cuenta de Facebook">Ingresar con mis datos de Facebook</a>
 			</div>
 		</div>
-		<div class="col-xs-12 col-md-6">
-			<h1>Registro</h1>
+		<div class="div_registro">
+			<h2>Registro</h2>
 			<p>¿Sos profesional y te gustaría darte a conocer?</p>
 			<a href="#" class="registrate_ahora" title="Registrate ahora" data-toggle="modal" data-target="#ModalRegistro">Registrate ahora</a>
 		</div>
@@ -48,7 +40,7 @@
 		<div class="modal-content">
 		  <div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">Formulario de registro</h4>
+			<h2 class="modal-title">Formulario de registro</h2>
 		  </div>
 		  <form name="register_form" id="register_form" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
 			  <div class="modal-body">
