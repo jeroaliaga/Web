@@ -1084,7 +1084,7 @@ footer > span{
     resize: none;
     height: 90px;
 }
-.cont_form > form > input[type=submit], #login_form > .btn.btn-default, .login > .container > .div_registro > a{
+.cont_form > form > input[type=submit], #login_form > .btn.btn-default, .login > .container > .div_registro > a, .modal-dialog > .modal-content > form > .modal-footer > .btn.btn-default{
     width: 100px;
     height: 35px;
     font-size: 1em;
@@ -1203,9 +1203,10 @@ footer > span{
     background-attachment: fixed;
 }
 .modal-dialog{
-    margin-top: 0;
+    position: relative;
+    margin: 0;
+    min-height: calc(100vh - 100px);
     width: 100%;
-    margin-left: 0;
     background: url(../img/bgGreen.png) repeat;
 }
 .modal-dialog > .modal-content{
@@ -1218,12 +1219,29 @@ footer > span{
 }
 .modal-dialog > .modal-content > .modal-header{
     padding: 0;
+    border-bottom: none;
 }
 .modal-dialog > .modal-content > .modal-header > h2{
     margin-top: 60px;
 }
+.modal-dialog > .modal-content > .modal-header > .close{
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+.modal-dialog > .modal-content > form{
+    padding-bottom: 40px;
+}
 .modal-dialog > .modal-content > form > .modal-body{
     padding: 0;
+}
+.modal-dialog > .modal-content > form > .modal-footer{
+    border-top: none;
+    margin-bottom: 40px;
+}
+.modal-dialog > .modal-content > form > .modal-footer > .btn.btn-default{
+    width: 180px;
+    margin-bottom: 40px;
 }
 .modal-backdrop{
     background: none;
