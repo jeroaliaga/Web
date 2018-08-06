@@ -209,12 +209,14 @@
 	include($ruta_raiz."includes/sitematrix/head.php");
 ?> 
 <body>
+
 	<?php
 	foreach ($includes_array as $include_array){
 		include($ruta_raiz."includes/contenidos/".$include_array);
 	}
 	///Scripts antes de cerrar el body
 	include($ruta_raiz."includes/sitematrix/more_scripts.php");
+	echo "<script src='../static/js/fb.js'></script>";
 	?>
 </body>
 </html>
