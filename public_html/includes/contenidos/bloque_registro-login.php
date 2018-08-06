@@ -21,7 +21,8 @@
 			</form>
 			<div class="acceso_pacientes">
 				<h2>Ingreso Pacientes</h2>
-				<a href="<?php echo $loginUrl; ?>" title="Ingreso con cuenta de Facebook">Ingresar con mis datos de Facebook</a>
+				<!-- $loginUrl; -->
+				<a href="javascript:void(0)" title="Ingreso con cuenta de Facebook" id="fb-btn">Ingresar con mis datos de Facebook</a>
 			</div>
 		</div>
 		<div class="div_registro">

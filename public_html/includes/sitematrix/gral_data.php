@@ -8,7 +8,7 @@ $numero_dia = date("N");
 $hoy_y_ahora = date("Y-m-d H:i:s");
 $hoy_ahora_epoch = strtotime($hoy_y_ahora);
 $meses = array('Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic');
-
+error_reporting(0);
 $ruta_absoluta = 'http://www.desaludhablamos.com/';
 
 $nombre_cliente = 'De Salud Hablamos';
