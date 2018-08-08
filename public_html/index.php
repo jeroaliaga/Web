@@ -45,5 +45,7 @@
 	///Scripts antes de cerrar el body
 	include($ruta_raiz."includes/sitematrix/more_scripts.php");
 	?>
+	<script src='static/js/run.js'></script>
+
 </body>
 </html>

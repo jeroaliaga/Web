@@ -26,5 +26,6 @@
 	///Scripts antes de cerrar el body
 	include($ruta_raiz."includes/sitematrix/more_scripts.php");
 	?>
+	<!--<script src='static/js/runQuienesSomos.js'></script>-->
 </body>
 </html>
