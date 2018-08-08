@@ -1,45 +1,50 @@
-window.onload = function codigo(){
 
-	//Hay dos contenedores.  “SI SOS PROFESIONAL” (“.faqs > .links > ul > li:first-of-type > a”) 
-	//y “SI BUSCAS UN PROFESIONAL  (“.faqs > .links > ul > li:nth-of-type(3) > a”).
+var bin = document.getElementsByClassName('faqs')[0].getElementsByClassName('links')[0].getElementsByTagName('ul')[0];
+var profC = bin.getElementsByTagName('a')[0];
+var patC = bin.getElementsByTagName('a')[1];
 
-	var bin = document.getElementsByClassName('faqs').getElementsByClassName('links').getElementsByTagName('ul');
-	var prof = bin[0].getElementsByTagName('a')[0];
-	var client = bin[3].getElementsByTagName('a')[0];
+var patient = true; //flag de profesional/paciente
+var professional = false;
 
-	//como accedo a todo lo que pide no me queda claro
+var readMoreBtn = document.getElementsByClassName('profesional')[0].getElementsByClassName('leermas')[0]; //arranca como profesional
+readMoreBtn.addEventListener('click', showText); //si se toca el botón de leer más, muestra lo pertinente a clase profesional
 
-	var client = true;
-	var professional = false;
+profC.addEventListener('click', userType(professional)); //si sos profesional CLICK
+patC.addEventListener('click',userType(patient)); //si buscas un profesional CLICK
 
-	prof.addEventListener('click', userType(professional));
-	client.addEventListener('click',usertype(client));
 
-}
-
-function userType(isClient){
+function userType(isPatient){
 	return function(){
 
-		var professional =  this.parentNode[0];
-		var client = this.parentNode[3];
+		var professional =  this.parentNode.parentNode.children[0].children[0];
+		var patient = this.parentNode.parentNode.children[2].children[0];
 
-		if(isClient){
+		var classPro = document.getElementsByClassName('profesional')[0];
+		var classPat = document.getElementsByClassName('paciente')[0];
 
+		var readMoreBtn;
+
+		if(isPatient){
+
+			console.log("paciente");
 			//professional.className = element.className.replace(/\bselect\b/g, ""); //sirve para solucionar cross-browsing
 			professional.classList.remove("select");
-			animation2(client,professional);
+			animation2(classPat,classPro);
 
+			readMoreBtn = classPro.getElementsByClassName('leermas')[0];
 		}
 		else{
 
+			console.log("profesional");
 			//client.className = element.className.replace(/\bselect\b/g, ""); //sirve para solucionar cross-browsing
-			client.classList.remove("select");
-			animation2(professional,client);
+			patient.classList.remove("select");
+			animation2(classPro,classPat);
 
+			readMoreBtn = classPat.getElementsByClassName('leermas')[0];
 		}
 
 		this.className = 'select';
-
+		readMoreBtn.addEventListener('click', showText);
 
 	};
 
@@ -61,5 +66,19 @@ function animation2(userType, otherType){
 
 		}, 50);
 	}, 300);
+
+}
+
+function showText(){
+
+	var root = this.parentNode;
+	var elements = root.children;
+
+	for (var i = 0; i < (elements.length - 1); i++) {
+		elements[i].classList.add("visibles");
+		console.log(elements[i]);
+	}
+
+
 
 }

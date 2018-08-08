@@ -1,6 +1,8 @@
 <div class='contGallery' class="vh100">
 	<div class='contImgs'>
-		<div>
+		<div id='gallery_view'>
+			<h2>Un espacio de integración entre pacientes y profesionales</h2>
+		</div><div>
 			<h2>Un espacio de integración entre pacientes y profesionales</h2>
 		</div><div>
 			<h2>Un espacio de integración entre pacientes y profesionales 2</h2>

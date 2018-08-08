@@ -250,13 +250,19 @@ input, textarea{
     background-attachment: fixed;
 }
 .contGallery > .contImgs > div:nth-of-type(2){
-    background: url(../img/gallery2.jpg);
+    background: url(../img/gallery1.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 .contGallery > .contImgs > div:nth-of-type(3){
     background: url(../img/gallery3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.contGallery > .contImgs > div:nth-of-type(4){
+    background: url(../img/gallery4.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -605,7 +611,7 @@ footer > span{
     margin: auto;
     width: 100%;
 }
-.quienessomos > .container > h2, .section_notas > .container > h2, .note_container > .container_info > h2{
+.quienessomos > .container > h2, .section_notas > .container > h2, .note_container > .container_info > h2, .resultados > .container > h2, .mi-perfil > .container > h2{
     width: 80%;
     margin: auto;
     margin-bottom: 30px;
@@ -724,7 +730,7 @@ footer > span{
     min-height: 350px;
     padding-bottom: 60px;
 }
-.section_notas > .container > h2, .note_container > .container_info > h2, .resultados > .container > h2{
+.section_notas > .container > h2, .note_container > .container_info > h2, .resultados > .container > h2, .mi-perfil > .container > h2{
     padding-top: 40px;
     padding-bottom: 15px;
     margin-bottom: 30px;
@@ -815,7 +821,7 @@ footer > span{
     position: relative;
     padding-bottom: 60px;
 }
-.note_container > .container_info > h2, .resultados > .container > h2{
+.note_container > .container_info > h2, .resultados > .container > h2, .mi-perfil > .container > h2{
     color: #009D84;
     border-bottom: 1px solid black;
 }
@@ -1195,7 +1201,6 @@ footer > span{
 /* Registro */
 
 #ModalRegistro.modal{
-    background: none;
     margin-top: 100px;
     background: url(../img/gallery1.jpg);
     background-size: cover;
@@ -1228,20 +1233,23 @@ footer > span{
     position: absolute;
     top: 20px;
     right: 0;
+    font-size: 2em;
 }
 .modal-dialog > .modal-content > form{
     padding-bottom: 40px;
+    max-width: 400px;
 }
 .modal-dialog > .modal-content > form > .modal-body{
     padding: 0;
 }
 .modal-dialog > .modal-content > form > .modal-footer{
+    position: relative;
     border-top: none;
-    margin-bottom: 40px;
+    padding: 0;
+    padding-top: 60px;
 }
 .modal-dialog > .modal-content > form > .modal-footer > .btn.btn-default{
     width: 180px;
-    margin-bottom: 40px;
 }
 .modal-backdrop{
     background: none;
@@ -1251,6 +1259,114 @@ footer > span{
 
 .resultados{
     padding-bottom: 60px;
+    background: url(../img/gallery1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.resultados > .container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: url(../img/bgWhite.png) repeat;
+}
+.cont_resultados > .bloque_resultados_profesionales{
+    padding-left: 0;
+    list-style: none;
+    width: 80%;
+    margin: auto;
+    word-wrap: break-word;
+    color: #707070;
+}
+.cont_resultados > .bloque_resultados_profesionales > li > .datos_profesional{
+    padding: 20px 20px 30px 20px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 3px 6px #B1B1B1;
+}
+.cont_resultados > .bloque_resultados_profesionales > li > .datos_profesional > .imagen_perfil > a > div{
+    display: block;
+    width: 130px;
+    height: 0;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-bottom: 130px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.cont_resultados > .bloque_resultados_profesionales > li > .datos_profesional > .imagen_perfil > a > div > img{
+    width: 100%;
+}
+.cont_resultados > .bloque_resultados_profesionales > li > .datos_profesional > .datos > h3 > a{
+    text-transform: uppercase;
+    text-align: center;
+    color: #009D84;
+    width: 100%;
+    display: block;
+    font-size: 1em;
+}
+.cont_resultados > .bloque_resultados_profesionales > li > .datos_profesional > .datos > h4{
+    color: #009D84;
+}
+.cont_resultados > .bloque_resultados_profesionales > li > .datos_profesional > .imagen_perfil > span{
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.calificaciones.resultados{
+    display: none;
+}
+
+/* Mi perfil */
+
+.mi-perfil{
+    width: 100%;
+    padding-bottom: 60px;
+    background: url(../img/gallery1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.mi-perfil > .container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: url(../img/bgWhite.png) repeat;
+}
+.mi-perfil > .container > h2, .mi-perfil > .container > .contenido{
+    width: 80%;
+    margin: auto;
+}
+.bloque_tabs > .nav-tabs{
+    border: none;
+}
+.bloque_tabs > .nav-tabs > li{
+    display: inline-block;
+    float: none;
+    margin-bottom: 0;
+    text-align: left;
+}
+.bloque_tabs > .nav-tabs > li > a{
+    padding: 0;
+    margin: 20px 20px 0 0;
+    text-transform: uppercase;
+    color: #707070;
+}
+.bloque_tabs > .nav-tabs > li.active > a{
+    color: #009D84;
+    border: none;
+    background: transparent;
+}
+
+/* Publicación */
+
+.alert.alert-success{
+    position: fixed;
+    z-index: 1000000000;
+    top: 140px;
+    right: 10%;
 }
 
 /*Bloque registro/login 
@@ -3136,5 +3252,16 @@ a.btn_comprar:hover{
     }
     .login > .container > .cont_login{
         margin-left: 20%;
+    }
+    .mi-perfil > .container > h2, .mi-perfil > .container > .contenido{
+        width: 90%;
+    }
+    .contenido{
+        position: relative;
+    }
+    #tabs{
+        position: absolute;
+        left: 170px;
+        top: -78px;
     }
 }

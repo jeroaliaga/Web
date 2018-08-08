@@ -1,4 +1,3 @@
-////////////////////HEADER//////////////////////
 
 var menu_head = document.getElementsByClassName("menu_head")[0]; //barra del header
 var searchContainer = document.getElementsByClassName("searchContainer")[0]; //contenedor de búsqueda
@@ -13,23 +12,7 @@ window.addEventListener("resize",setStyles(850,1400,menu_head,searchContainer));
 searchBtn.addEventListener('click',searcherHandler(menu_head,searchContainer));	//si clickean el botón del buscador
 														//lo abro, muestro animación, etc....
 
-////////////////////GALERÍA//////////////////////
 
-var ulGallery = document.getElementsByClassName('ulGallery')[0];
-var ulGalleryLI = ulGallery.getElementsByTagName('li');
-
-for (var i = 0; i < 3; i++) {
-
-	var element = ulGalleryLI[i];
-
-	element.setAttribute("number", i+1); //offset para que cuente de 1 a 3
-	element.addEventListener('click', changeDisp); //cuando clickeo un LI, 
-																//la primera imagen se esfuma y aparece la nueva
-}
-
-////////////////////////////////////////////////////FUNCIONES////////////////////////////////////////////////////////////////////
-
-////////////////////HEADER//////////////////////
 function setStyles(Lwidth,Hwidth,item,item2){
 	return function (){
 
@@ -104,40 +87,5 @@ function animation1(item,item2){
 			item2.style.overflow='visible';
 		}, 100);
 	}, 300);
-
-}
-
-
-////////////////////GALERÍA//////////////////////
-function changeDisp(){
-
-	var contGallery = document.getElementsByClassName('contGallery')[0];
-	var contImgs = contGallery.getElementsByClassName('contImgs')[0].getElementsByTagName('div');
-
-	var gallery_view = contImgs[0]; //div de lo que se muestra en pantalla
-	var currentContent = contImgs[this.getAttribute("number")]; //div del li seleccionado
-
-	var ulGallery = document.getElementsByClassName('ulGallery')[0];
-	var ulGalleryLI = ulGallery.getElementsByTagName('li');
-
-	//cambio h2, background por el seleccionado
-	gallery_view.getElementsByTagName('h2')[0].innerHTML = currentContent.getElementsByTagName('h2')[0].innerHTML;
-	gallery_view.style.backgroundImage = "url(../img/gallery"+ this.getAttribute("number") +".jpg)";
-
-	for (var i = 0; i < ulGalleryLI.length; i++) {
-
-		if (this.getAttribute("number") == ulGalleryLI[i].getAttribute("number")){
-
-			ulGalleryLI[i].getElementsByTagName('a')[0].className = 'selected'; //al elegido le doy la clase selected
-
-		}
-		else{
-
-			ulGalleryLI[i].getElementsByTagName('a')[0].className = ''; //a los demás se las saco
-			//ulGalleryLI[i].getElementsByTagName('a').classList.remove('selected');
-
-		}
-	}
-
 
 }
