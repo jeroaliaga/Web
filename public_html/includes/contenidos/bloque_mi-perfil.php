@@ -211,7 +211,7 @@
 		} while ($row_R_user_publicaciones_e = mysql_fetch_assoc($R_user_publicaciones_e));
 	}
 ?>
-<div class="bloque_registro">
+<div class="mi-perfil">
 	<div class="container">
 		<?php if($estado_proceso){?>
 		<div class="row" style="margin-top:20px;">
@@ -221,19 +221,20 @@
 			</div>
 		</div>
 		<?php } ?>
-		<div class="col-xs-12 col-md-12">
+		<h2>Mi Perfil</h2>
+		<div class="contenido">
 			<div class="bloque_tabs">
 				<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-					<li <?php if($DoGuardarPerfil||!$DoPublish&&!$edit&&!$DoCerrarCuenta){echo 'class="active"'; } ?>><a href="#perfil" data-toggle="tab"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Mi Perfil</span></a></li>
-					<li ><a href="#material" data-toggle="tab"><i class="fa fa-paperclip" aria-hidden="true"></i> <span>Publicaciones</span></a></li>
-					<li <?php if($DoPublish){echo 'class="active"'; } ?>><a href="#nueva_publicacion" data-toggle="tab"><i class="fa fa-plus-circle" aria-hidden="true"></i> <span>Nueva Publicación</span></a></li>
-					<li ><a href="#profesionales" data-toggle="tab"><i class="fa fa-heart" aria-hidden="true"></i> <span>Mis profesionales</span></a></li>
-					<li ><a href="#grupos" data-toggle="tab"><i class="fa fa-comments" aria-hidden="true"></i> <span>Mis grupos</span></a></li>
+					<li <?php if($DoGuardarPerfil||!$DoPublish&&!$edit&&!$DoCerrarCuenta){echo 'class="active"'; } ?>><a href="#perfil" data-toggle="tab"><span>Mi Perfil</span></a></li>
+					<li ><a href="#material" data-toggle="tab"> <span>Publicaciones</span></a></li>
+					<li <?php if($DoPublish){echo 'class="active"'; } ?>><a href="#nueva_publicacion" data-toggle="tab"><span>Nueva Publicación</span></a></li>
+					<li ><a href="#profesionales" data-toggle="tab"><span>Mis profesionales</span></a></li>
+					<li ><a href="#grupos" data-toggle="tab"><span>Mis grupos</span></a></li>
 					<?php if($totalRows_R_user_publicaciones_e>0){?>
-					<li class="active"><a href="#edit" data-toggle="tab"><i class="fa fa-pencil" aria-hidden="true"></i> <?php echo substr($edit_title, 0, 15); ?>...</a></li>
+					<li class="active"><a href="#edit" data-toggle="tab"><?php echo substr($edit_title, 0, 15); ?>...</a></li>
 					<?php } ?>
-					<li <?php if($DoCerrarCuenta){ echo 'class="active"'; } ?>><a href="#baja" data-toggle="tab"><i class="fa fa-user-times" aria-hidden="true"></i> <span>Cerrar Cuenta</span></a></li>
-					<li <?php if($DoGetPro){ echo 'class="active"'; } ?>><a href="#pro" data-toggle="tab"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span>Cuenta PRO</span></a></li>
+					<li <?php if($DoCerrarCuenta){ echo 'class="active"'; } ?>><a href="#baja" data-toggle="tab"><span>Cerrar Cuenta</span></a></li>
+					<li <?php if($DoGetPro){ echo 'class="active"'; } ?>><a href="#pro" data-toggle="tab"><span>Cuenta PRO</span></a></li>
 				</ul>
 				<div id="my-tab-content" class="tab-content">
 					<div class="tab-pane" id="material">
@@ -430,12 +431,12 @@
 							</div>
 						</form>
 					</div>
+					<a class="ver_version_online" target="_blank" href="<?php echo $ruta_raiz; ?>profesionales/?id=<?php echo $_SESSION['id_usuario']; ?>" title="Ver como lo ven los visitantes del sitio">
+						<span>Ver perfil como lo ven los visitantes del sitio</span>
+						<i class="fa fa-eye" aria-hidden="true"></i>
+					</a>
 					<div class="tab-pane<?php if(!$DoPublish&&!$edit&&!$DoCerrarCuenta){echo ' active'; } ?>" id="perfil">
 						<h1>Mantén tu perfil actualizado</h1>
-						<a class="ver_version_online" target="_blank" href="<?php echo $ruta_raiz; ?>profesionales/?id=<?php echo $_SESSION['id_usuario']; ?>" title="Ver como lo ven los visitantes del sitio">
-							<span>Ver perfil como lo ven los visitantes del sitio</span>
-							<i class="fa fa-eye" aria-hidden="true"></i>
-						</a>
 						<form name="login_form" id="perfil_form" enctype="multipart/form-data" method="post" action="<?php $_SERVER['PHP_SELF']; ?>" onsubmit="showDiv();">
 							<div class="col-xs-12 col-md-6">
 								<div class="form-group">

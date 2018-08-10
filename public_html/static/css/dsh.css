@@ -667,11 +667,11 @@ footer > span{
 .faqs > .links > ul > li > .select{
     color: #009D84;
 }
-.faqs > div > h3{
+.faqs > div > h3, .faqs > div > .no-visible > h3{
     color: #009D84;
     font-size: 1em;
 }
-.faqs > div > p{
+.faqs > div > p, .faqs > div > .no-visible > p{
     color: #707070;
     margin-bottom: 30px;
 }
@@ -683,13 +683,13 @@ footer > span{
     list-style: none;
     padding-left: 0;
 }
-.faqs > div > h3, .faqs > div > p, .faqs > div > ul{
+.faqs > div > .no-visible{
     height: 0;
     overflow: hidden;
     opacity: 0;
     display: none;
 }
-.faqs > div > h3.visibles, .faqs > div > p.visibles, .faqs > div > ul.visibles{
+.faqs > div > h3, .faqs > div > p, .faqs > div > ul{
     display: block;
     height: auto;
     overflow: visible;
@@ -698,7 +698,7 @@ footer > span{
 .profesional, .paciente{
     margin-bottom: 60px;
     transition: ease all .3s;-moz-transition: ease all .3s;-webkit-transition: ease all .3s;
-    display: inline-block;
+    display: block;
 }
 .paciente{
     display: none;
