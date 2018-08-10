@@ -23,10 +23,12 @@ function changeDisp(){
 	var ulGalleryLI = ulGallery.getElementsByTagName('li');
 
 	//cambio h2, background por el seleccionado
+
 	$(gallery_view).fadeOut("slow","", function(){
 		setContent(gallery_view,currentContent,this);
 	});
 	$(gallery_view).fadeIn("slow");
+
 
 	for (var i = 0; i < ulGalleryLI.length; i++) {
 
