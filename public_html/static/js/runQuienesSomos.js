@@ -16,6 +16,17 @@ patC.addEventListener('click',userType(patient)); //si buscas un profesional CLI
 function userType(isPatient){
 	return function(){
 
+		//primero viene profesional, después paciente en el html
+		// var rmBtns = document.getElementsByClassName('leermas');
+		// console.log(rmBtns);
+		// console.log(rmBtns[0]);
+		// console.log(rmBtns[1]);
+		// rmBtns[0].classList.add("visibles"); 
+		// rmBtns[1].classList.add("visibles"); 
+
+		// rmBtns[0].previousElementSibling.className = "no-visible";
+		// rmBtns[1].previousElementSibling.className = "no-visible";
+
 		var professional =  this.parentNode.parentNode.children[0].children[0];
 		var patient = this.parentNode.parentNode.children[2].children[0];
 
@@ -71,14 +82,9 @@ function animation2(userType, otherType){
 
 function showText(){
 
-	var root = this.parentNode;
-	var elements = root.children;
-
-	for (var i = 0; i < (elements.length - 1); i++) {
-		elements[i].classList.add("visibles");
-		console.log(elements[i]);
-	}
-
-
+	var root = this.previousElementSibling;
+	root.className = "visibles";
+	this.className = "no-visible";
+	this.removeEventListener('click',showText);
 
 }
