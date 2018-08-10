@@ -17,17 +17,17 @@ function changeDisp(){
 	var contImgs = contGallery.getElementsByClassName('contImgs')[0].getElementsByTagName('div');
 
 	var gallery_view = contImgs[0]; //div de lo que se muestra en pantalla
-	var currentContent = contImgs[this.getAttribute("number")]; //div del li seleccionado
+	var index = this.getAttribute("number"); //número de li seleccionado
+	var currentContent = contImgs[index]; //div del li seleccionado
 
 	var ulGallery = document.getElementsByClassName('ulGallery')[0];
 	var ulGalleryLI = ulGallery.getElementsByTagName('li');
 
 	//cambio h2, background por el seleccionado
 
-	$(gallery_view).fadeOut("slow","", function(){
-		setContent(gallery_view,currentContent,this);
-	});
-	$(gallery_view).fadeIn("slow");
+	$(gallery_view).fadeOut("slow","",function(){ setContent(gallery_view,currentContent,index);}); //se esfuma, 
+															//luego llama a setContent que cambia el contenido
+	$(gallery_view).fadeIn("slow"); //y aparece gradualmente con el contenido cambiado...
 
 
 	for (var i = 0; i < ulGalleryLI.length; i++) {
@@ -44,13 +44,11 @@ function changeDisp(){
 
 		}
 	}
-
-
 }
 
 function setContent(location,newContent,element){
 
-	location.getElementsByTagName('h2')[0].innerHTML = newContent.getElementsByTagName('h2')[0].innerHTML;
-	location.style.backgroundImage = "url(static/img/gallery"+ element.getAttribute("number") +".jpg)"; //JEROOOOOOOOOOOOOO
+	location.getElementsByTagName('h2')[0].innerHTML = newContent.getElementsByTagName('h2')[0].innerHTML; //cambio el texto mostrado
+	location.style.backgroundImage = "url(static/img/gallery"+ element +".jpg)"; //cambio la imagen de fondo
 
 }
