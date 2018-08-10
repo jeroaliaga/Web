@@ -23,8 +23,10 @@ function changeDisp(){
 	var ulGalleryLI = ulGallery.getElementsByTagName('li');
 
 	//cambio h2, background por el seleccionado
-	gallery_view.getElementsByTagName('h2')[0].innerHTML = currentContent.getElementsByTagName('h2')[0].innerHTML;
-	gallery_view.style.backgroundImage = "url(../img/gallery"+ this.getAttribute("number") +".jpg)";
+	$(gallery_view).fadeOut("slow","", function(){
+		setContent(gallery_view,currentContent,this);
+	});
+	$(gallery_view).fadeIn("slow");
 
 	for (var i = 0; i < ulGalleryLI.length; i++) {
 
@@ -41,5 +43,12 @@ function changeDisp(){
 		}
 	}
 
+
+}
+
+function setContent(location,newContent,element){
+
+	location.getElementsByTagName('h2')[0].innerHTML = newContent.getElementsByTagName('h2')[0].innerHTML;
+	location.style.backgroundImage = "url(static/img/gallery"+ element.getAttribute("number") +".jpg)"; //JEROOOOOOOOOOOOOO
 
 }
