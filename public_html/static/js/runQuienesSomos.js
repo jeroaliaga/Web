@@ -6,8 +6,8 @@ var patC = bin.getElementsByTagName('a')[1];
 var patient = true; //flag de profesional/paciente
 var professional = false;
 
-var readMoreBtn = document.getElementsByClassName('profesional')[0].getElementsByClassName('leermas')[0]; //arranca como profesional
-readMoreBtn.addEventListener('click', showText); //si se toca el botón de leer más, muestra lo pertinente a clase profesional
+var start = userType(professional).bind(profC); //inicializo como profesional...
+start();
 
 profC.addEventListener('click', userType(professional)); //si sos profesional CLICK
 patC.addEventListener('click',userType(patient)); //si buscas un profesional CLICK
@@ -17,15 +17,17 @@ function userType(isPatient){
 	return function(){
 
 		//primero viene profesional, después paciente en el html
-		// var rmBtns = document.getElementsByClassName('leermas');
-		// console.log(rmBtns);
-		// console.log(rmBtns[0]);
-		// console.log(rmBtns[1]);
-		// rmBtns[0].classList.add("visibles"); 
-		// rmBtns[1].classList.add("visibles"); 
 
-		// rmBtns[0].previousElementSibling.className = "no-visible";
-		// rmBtns[1].previousElementSibling.className = "no-visible";
+		////////////////////////////////
+		//el siguiente fragmento de código es por si se está seleccionado paciente y se pasa a profesional, o viceversa...
+		var rmBtns = document.getElementsByClassName('leermas'); //cargo botones de leer más
+
+		for (var i = 0; i < rmBtns.length; i++) {
+			rmBtns[i].classList.remove("no-visible"); //los muestro en ambos tipos de usuario por defecto
+			rmBtns[i].classList.add("visibles"); 
+			rmBtns[i].previousElementSibling.className = "no-visible"; //escondo el div que muestra el botón de  leer más
+		}
+		/////////////////////////////////
 
 		var professional =  this.parentNode.parentNode.children[0].children[0];
 		var patient = this.parentNode.parentNode.children[2].children[0];
@@ -37,25 +39,25 @@ function userType(isPatient){
 
 		if(isPatient){
 
-			console.log("paciente");
+			//console.log("paciente");
 			//professional.className = element.className.replace(/\bselect\b/g, ""); //sirve para solucionar cross-browsing
-			professional.classList.remove("select");
-			animation2(classPat,classPro);
+			professional.classList.remove("select"); //deselecciono el otro tipo de usuario
+			animation2(classPat,classPro); //animación
 
-			readMoreBtn = classPro.getElementsByClassName('leermas')[0];
+			readMoreBtn = rmBtns[1]; //dejo indicado cuál de los botón leermás se está manipulando
 		}
 		else{
 
-			console.log("profesional");
+			//console.log("profesional");
 			//client.className = element.className.replace(/\bselect\b/g, ""); //sirve para solucionar cross-browsing
-			patient.classList.remove("select");
-			animation2(classPro,classPat);
+			patient.classList.remove("select"); //deselecciono el otro tipo de usuario
+			animation2(classPro,classPat); //animación
 
-			readMoreBtn = classPat.getElementsByClassName('leermas')[0];
+			readMoreBtn = rmBtns[0]; //dejo indicado cuál de los botón leermás se está manipulando
 		}
 
-		this.className = 'select';
-		readMoreBtn.addEventListener('click', showText);
+		this.className = 'select'; //dejo seleccionado el tipo de usuari clickeado
+		readMoreBtn.addEventListener('click', showText); //muestro texto adicional cuando se presiona el botón leermás
 
 	};
 
@@ -80,11 +82,27 @@ function animation2(userType, otherType){
 
 }
 
+function animation3(text){
+	
+	setTimeout(function(){ 
+
+		text.style.display = 'block';
+
+		setTimeout(function(){ 
+
+			text.style.opacity = 1;
+
+		}, 50);
+	}, 300);
+
+}
+
 function showText(){
 
 	var root = this.previousElementSibling;
-	root.className = "visibles";
-	this.className = "no-visible";
-	this.removeEventListener('click',showText);
+	animation3(root);
+	root.className = "visibles"; //al elemento ubicado antes del botón leer más, lo hago visible
+	this.classList.add("no-visible"); //escondo el botón de leer más
+	this.removeEventListener('click',showText); //le quito el Listener al botón
 
 }
