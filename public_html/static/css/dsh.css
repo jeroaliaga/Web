@@ -244,25 +244,25 @@ input, textarea{
     vertical-align: top;
 }
 .contGallery > .contImgs > div:first-of-type{
-    background: url(../img/gallery1.jpg);
+    background-image: url(../img/gallery1.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 .contGallery > .contImgs > div:nth-of-type(2){
-    background: url(../img/gallery1.jpg);
+    background-image: url(../img/gallery1.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 .contGallery > .contImgs > div:nth-of-type(3){
-    background: url(../img/gallery3.jpg);
+    background-image: url(../img/gallery3.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 .contGallery > .contImgs > div:nth-of-type(4){
-    background: url(../img/gallery4.jpg);
+    background-image: url(../img/gallery4.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

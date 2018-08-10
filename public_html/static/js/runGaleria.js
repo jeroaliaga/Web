@@ -25,7 +25,7 @@ function changeDisp(){
 	//cambio h2, background por el seleccionado
 	gallery_view.getElementsByTagName('h2')[0].innerHTML = currentContent.getElementsByTagName('h2')[0].innerHTML;
 	gallery_view.style.backgroundImage = "url(static/img/gallery"+ this.getAttribute("number") +".jpg)";
-    console.log(gallery_view.style.backgroundImage);
+
 	for (var i = 0; i < ulGalleryLI.length; i++) {
 
 		if (this.getAttribute("number") == ulGalleryLI[i].getAttribute("number")){
