@@ -16,7 +16,7 @@ searchBtn.addEventListener('click',searcherHandler(menu_head,searchContainer));	
 function setStyles(Lwidth,Hwidth,item,item2){
 	return function (){
 
-		if((window.innerWidth > Hwidth)&&(window.innerWidth < Lwidth)){ 
+		if((window.innerWidth > Hwidth)||(window.innerWidth < Lwidth)){ 
 
 			item.removeAttribute("style");
 			item2.removeAttribute("style");
