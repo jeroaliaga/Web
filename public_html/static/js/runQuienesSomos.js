@@ -100,7 +100,7 @@ function animation3(text){
 function showText(){
 
 	var root = this.previousElementSibling;
-	animation3(root);
+	//animation3(root);
 	root.className = "visibles"; //al elemento ubicado antes del botón leer más, lo hago visible
 	this.classList.add("no-visible"); //escondo el botón de leer más
 	this.removeEventListener('click',showText); //le quito el Listener al botón

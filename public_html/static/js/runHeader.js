@@ -16,20 +16,13 @@ searchBtn.addEventListener('click',searcherHandler(menu_head,searchContainer));	
 function setStyles(Lwidth,Hwidth,item,item2){
 	return function (){
 
-		if((window.innerWidth <= Hwidth)&&(window.innerWidth >= Lwidth)){ 
+		if((window.innerWidth > Hwidth)&&(window.innerWidth < Lwidth)){ 
 
-			item.classList.add("style");
-			item2.classList.add("style");
+			item.removeAttribute("style");
+			item2.removeAttribute("style");
 
 		} 
-		else{
 
-			item.classList.remove("style");
-			item2.classList.remove("style");
-
-		}
-		//console.log(item.classList); //muestro la lista de clases
-		//console.log(item2.classList); //muestro la lista de clases
 	};
 }
 
