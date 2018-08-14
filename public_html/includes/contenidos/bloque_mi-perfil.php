@@ -436,22 +436,17 @@
 						<i class="fa fa-eye" aria-hidden="true"></i>
 					</a>
 					<div class="tab-pane<?php if(!$DoPublish&&!$edit&&!$DoCerrarCuenta){echo ' active'; } ?>" id="perfil">
-						<h1>Mantén tu perfil actualizado</h1>
 						<form name="login_form" id="perfil_form" enctype="multipart/form-data" method="post" action="<?php $_SERVER['PHP_SELF']; ?>" onsubmit="showDiv();">
-							<div class="col-xs-12 col-md-6">
+							<div class="perfil">
+								<h3>Mantén tu perfil actualizado</h3>
 								<div class="form-group">
-									<label for="email">Nombre*</label>
-									<input name="nombre" required type="text" class="form-control" <?php if($_SESSION['nombre']){echo 'value="'.$_SESSION['nombre'].'"';} else { echo 'value="'.$_SESSION['nombre_usr'].'"'; }?>>
+									<input name="nombre" required placeholder="Nombre*" type="text" class="form-control" <?php if($_SESSION['nombre']){echo 'value="'.$_SESSION['nombre'].'"';} else { echo 'value="'.$_SESSION['nombre_usr'].'"'; }?>>
 								</div>
-								<?php if($_SESSION['tipo_usuario']==1){?>
 								<div class="form-group">
-									<label for="email">Apellido*</label>
-									<input name="apellido" required type="text" class="form-control" <?php if($_SESSION['apellido']){echo 'value="'.$_SESSION['apellido'].'"';} else { echo 'value="'.$_SESSION['apellido_usr'].'"'; }?>>
+									<input name="apellido" required placeholder="Apellido (Obligatorio como profesional)" type="text" class="form-control" <?php if($_SESSION['apellido']){echo 'value="'.$_SESSION['apellido'].'"';} else { echo 'value="'.$_SESSION['apellido_usr'].'"'; }?>>
 								</div>
-								<?php } ?>
 								<div class="form-group">
-									<label for="email">Email*:</label>
-									<input name="email" required type="email" class="form-control" id="email" <?php if($_SESSION['email']){echo 'value="'.$_SESSION['email'].'"';} else { echo 'value="'.$_SESSION['email_usr'].'"'; }?>>
+									<input name="email" required placeholder="Email*" type="email" class="form-control" id="email" <?php if($_SESSION['email']){echo 'value="'.$_SESSION['email'].'"';} else { echo 'value="'.$_SESSION['email_usr'].'"'; }?>>
 								</div>
 								<?php if($_SESSION['tipo_usuario']==1){?>
 								<div class="form-group">
@@ -460,7 +455,7 @@
 								</div>
 								<?php } ?>
 								
-								<div class="form-group">
+								<div class="form-group apartado">
 									<label for="email">Consultorio</label>
 									<?php 
 										if($_SESSION['formacion_academica']){
@@ -591,7 +586,7 @@
 										</script>
 										<?php } while ($row_R_user_cons = mysql_fetch_assoc($R_user_cons)); ?>
 									</div>
-									<a id="add_bloque_consultorio"><i class="fa fa-plus-circle" aria-hidden="true"></i><span>Agregar consultorio</span></a>
+									<a id="add_consultorio"><i class="fa fa-plus" aria-hidden="true"></i><span>Agregar consultorio</span></a>
 									<script>
 										$('#add_bloque_consultorio').click(function() {
 											var nuevo_bloque =  parseFloat($('input#numero_bloque').val())+1;
@@ -825,26 +820,24 @@
 										initialPreview: [
 											"<img style='height:160px' src='<?php echo $_SESSION['img_usr']; ?>'>",
 										],
-										initialCaption: 'Initial-Image.jpg',
+										initialCaption: 'Imagen.jpg',
 										initialPreviewShowDelete: false,
 										showRemove: false,
 										showClose: false,
 										<?php } ?>
-										browseLabel: "Buscar imagen..."
+										browseLabel: "Examinar"
 									});
 									</script>
 								</div>
 								<div class="form-group">
 									<label>Contraseña (solo en caso que quiera cambiar la actual)</label>
-									<div>
-										<div class="bloque_formacion_academica">
-											<input placeholder="Escriba la nueva contraseña" name="password" type="password" class="form-control" >
-											<input placeholder="Repita la nueva contraseña" name="repassword" type="password" class="form-control" >
-										</div>
+									<div class="bloque_formacion_academica apartado">
+										<input placeholder="Escriba la nueva contraseña" name="password" type="password" class="form-control" >
+										<input placeholder="Repita la nueva contraseña" name="repassword" type="password" class="form-control" >
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-12 col-md-6">
+							<div class="especialidades">
 								<div class="form-group">
 									<label for="especialidades">Especialidades*:</label>
 										<ul class="especialidades">
@@ -1048,7 +1041,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-xs-12 col-md-12">
+							<div class="guardar">
 								<button type="submit" class="btn btn-default">Guardar</button>
 								<input type="hidden" name="action" value="DoGuardarPerfil" />
 							</div>

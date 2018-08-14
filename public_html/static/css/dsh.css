@@ -1359,6 +1359,37 @@ footer > span{
     border: none;
     background: transparent;
 }
+#perfil > form > div{
+    padding: 30px 20px;
+    margin-top: 30px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: 0px 3px 10px #B1B1B1;
+}
+#perfil > form > div{
+    padding: 30px 20px;
+    margin-top: 30px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: 0px 3px 10px #B1B1B1;
+}
+.perfil > .form-group input, .perfil > .form-group input, .perfil > .form-group textarea, .perfil > .form-group select{
+    border: #009D84 1px solid;
+}
+.perfil > .apartado{
+    padding: 15px 10px;
+    border: #009D84 1px solid;
+    border-radius: 13px;
+}
+.perfil > .apartado input, .perfil > .form-group > .apartado input, .perfil > .form-group select{
+    margin-bottom: 15px;
+}
+.perfil > h3{
+    margin-top: 0;
+    text-transform: uppercase;
+    color: #009D84;
+    font-size: 1.5em;
+}
 
 /* Publicación */
 
@@ -3262,6 +3293,6 @@ a.btn_comprar:hover{
     #tabs{
         position: absolute;
         left: 170px;
-        top: -78px;
+        top: -57px;
     }
 }
